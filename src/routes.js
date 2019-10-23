@@ -6,6 +6,7 @@ const SessionController = require('./controllers/SessionController');
 const ConsultaController = require('./controllers/ConsultaController');
 const RmController = require('./controllers/RmController');
 const SomaController = require('./controllers/SomaController');
+const ContagemController = require('./controllers/ContagemController');
 const CardapioController = require('./controllers/CardapioController');
 const UpdateController = require('./controllers/UpdateController');
 const ProfileController = require('./controllers/ProfileController');
@@ -14,6 +15,9 @@ const routes = express.Router();
 const upload = multer(uploadConfig);
 
 routes.post('/sessions', SessionController.store);
+
+routes.get('/contagem', ContagemController.index);
+routes.post('/contagem', ContagemController.store);
 
 routes.post('/rm', RmController.store);
 
